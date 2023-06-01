@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>3D Cube</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(45deg, #111, #222, #333, #444, #555, #666, #777);
+    }
+
+    main {
+      width: 100px;
+      height: 100px;
+      transform: rotateX(60deg) rotate(45deg);
+      transform-style: preserve-3d;
+      animation: rotation 5s infinite linear;
+    }
+
+    @keyframes rotation {
+      100% {
+        transform: rotateX(60deg) rotate(405deg);
+      }
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      opacity: 0.6;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+
+      /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+
+      clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+
+      /* clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%); */
+
+      /* clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%); */
+
+      /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%); */
+
+    }
+
+    .front {
+      background-color: royalblue;
+      transform: rotateX(90deg) translateY(50px) translateZ(-50px);
+    }
+
+
+    .behind {
+      background-color: yellowgreen;
+      transform: rotateX(90deg) translateY(50px) translateZ(50px);
+    }
+
+    .left {
+      background-color: tomato;
+      transform: rotateX(90deg) rotateY(90deg) translateY(50px) translateZ(-50px);
+    }
+
+    .right {
+      background-color: gold;
+      transform: rotateX(90deg) rotateY(90deg) translateY(50px) translateZ(50px);
+    }
+
+    .top {
+      background-color: seagreen;
+      transform: translateZ(100px)
+    }
+
+    .bottom {
+      background-color: sandybrown;
+    }
+
+    .middle-left {
+      background-color: purple;
+      transform: rotateX(90deg) translateY(50px);
+    }
+
+    .middle-right{
+      background-color: aqua;
+      transform: rotateX(90deg) rotateY(90deg) translateY(50px);
+    }
+
+    .middle {
+      background-color: olive;
+      transform: translateZ(50px);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="behind"></div>
+    <div class="front"></div>
+    <div class="middle-left"></div>
+    <div class="middle-right"></div>
+    <div class="middle"></div>
+  </main>
+</body>
+
+</html>
